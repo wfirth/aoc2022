@@ -48,20 +48,10 @@ def rps_result(yours:RPS, theirs:RPS):
     if yours == theirs:
         return(draw)
 
-    if yours == RPS.R:
-        if theirs == RPS.S:
-            return(win)
-        return(loss)
+    if beats[yours] == theirs:
+        return(win)
 
-    if yours == RPS.P:
-        if theirs == RPS.R:
-            return(win)
-        return(loss)
-
-    if yours == RPS.S:
-        if theirs == RPS.P:
-            return(win)
-        return(loss)
+    return(loss)
 
 def get_required_shape(theirs, result):
     if result == Result.Draw:
